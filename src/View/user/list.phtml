@@ -14,47 +14,30 @@
                     <th>Ações</th>
                 </thead>
                 <tbody class="text-center">
-                    <tr>
-                        <td>Cliff Baptista</td>
-                        <td>cliffmorais@gmail.com</td>
-                        <td>Ativo</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cliff Baptista</td>
-                        <td>cliffmorais@gmail.com</td>
-                        <td>Ativo</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cliff Baptista</td>
-                        <td>cliffmorais@gmail.com</td>
-                        <td>Ativo</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Cliff Baptista</td>
-                        <td>cliffmorais@gmail.com</td>
-                        <td>Ativo</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
+                <?php
+                    foreach ($data['users'] as $user) {
+                        $status = '<span class="badge badge-success">Ativo</span>';
+
+                        if (!$user->getStatus()) {
+                            $status = '<span class="badge badge-danger">Inativo</span>';
+                        }
+
+                        echo "
+                        <tr>
+                            <td>{$user->getName()}</td>
+                            <td>{$user->getEmail()}</td>
+                            <td>{$status}</td>
+                            <td>
+                                <a href='/excluir-usuario' class='btn btn-danger'>Excluir</a>
+                                <a href='/editar-usuario' class='btn btn-warning'>Editar</a>
+                            </td>
+                        </tr>
+                        ";
+                    }
+                ?>
+
                 </tbody>
-
             </table>
-
-
         </div>
     </div>
 </section>

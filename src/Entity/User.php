@@ -37,7 +37,7 @@ class User
     private $password;
 
     /**
-     * @Column(type="bolean")
+     * @Column(type="boolean")
      */
     private $status;
 

@@ -39,7 +39,7 @@ class Category
 
     public function setId(int $id): void
     {
-        return $this->id;
+        $this->id = $id;
     }
 
     public function getName(): ?string
