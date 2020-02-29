@@ -43,4 +43,16 @@ class CategoryController extends AbstractController
             'categories' => $categories,
         ]);
     }
+
+    public function remove(): void
+    {
+        $id = $_GET['id'];
+
+        $category = $this->repository->find($id);
+
+        $this->entityManager->remove($category);
+        $this->entityManager->flush();
+
+        header('location: /categorias');
+    }
 }

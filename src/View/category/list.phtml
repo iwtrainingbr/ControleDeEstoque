@@ -22,7 +22,7 @@
                             <td>{$category->getName()}</td>
                             <td>{$category->getDescription()}</td>
                             <td>
-                                <a href='/excluir-categoria' class='btn btn-danger'>Excluir</a>
+                                <a href='/excluir-categoria?id={$category->getId()}' class='btn btn-danger'>Excluir</a>
                                 <a href='/editar-categoria' class='btn btn-warning'>Editar</a>
                             </td>
                         </tr>

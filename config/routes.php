@@ -19,6 +19,8 @@ return[
     '/dashboard' => mountRoutes(IndexController::class, 'dashboard'),
     '/categorias' => mountRoutes(CategoryController::class, 'list'),
     '/nova-categoria' => mountRoutes(CategoryController::class, 'add'),
+    '/excluir-categoria' => mountRoutes(CategoryController::class, 'remove'),
+
     '/novo-usuario' => mountRoutes(UserController::class, 'add'),
     '/usuarios' => mountRoutes(UserController::class, 'list'),
     '/novo-produto' => mountRoutes(ProductController::class, 'add'),
