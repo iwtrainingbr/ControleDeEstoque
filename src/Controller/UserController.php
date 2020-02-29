@@ -22,6 +22,12 @@ class UserController extends AbstractController
     public function add():void
     {
         if ($_POST) {
+            if (trim($_POST['name']) === '') {
+                $_SESSION['error'] = ['Nome é obrigatório'];
+                header('location: /novo-usuario');
+                return;
+            }
+
             $user = new User();
             $user->setName($_POST['name']);
             $user->setEmail($_POST['email']);
@@ -51,5 +57,21 @@ class UserController extends AbstractController
     public function remove(): void
     {
         $user = $this->repository->find($_GET['id']);
+
+        $this->entityManager->remove($user);
+        $this->entityManager->flush();
+
+        $_SESSION['success'] = ["Usuário {$user->getName()} foi removido"];
+
+        header('location: /usuarios');
+    }
+
+    public function confirmRemove(): void
+    {
+        $user = $this->repository->find($_GET['id']);
+
+        $this->render('user/confirm-remove', [
+            'user' => $user,
+        ]);
     }
 }

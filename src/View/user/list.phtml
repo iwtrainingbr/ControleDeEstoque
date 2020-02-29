@@ -28,7 +28,7 @@
                             <td>{$user->getEmail()}</td>
                             <td>{$status}</td>
                             <td>
-                                <a href='/excluir-usuario' class='btn btn-danger'>Excluir</a>
+                                <a href='/confirmar-excluir-usuario?id={$user->getId()}' class='btn btn-danger'>Excluir</a>
                                 <a href='/editar-usuario' class='btn btn-warning'>Editar</a>
                             </td>
                         </tr>

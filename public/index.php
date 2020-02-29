@@ -2,6 +2,8 @@
 
 ini_set('display_errors', 1);
 
+session_start();
+
 $url = explode('?', $_SERVER['REQUEST_URI'])[0];
 
 include_once '../config/database.php';

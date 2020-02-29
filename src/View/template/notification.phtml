@@ -1,0 +1,30 @@
+<section class="row">
+    <div class="col-md-3 offset-md-9">
+        <?php
+        $error = $_SESSION['error'] ?? [];
+        $success = $_SESSION['success'] ?? [];
+
+        unset($_SESSION['error']);
+        unset($_SESSION['success']);
+
+        foreach ($error as $eachError) {
+            echo "
+                <div class='alert alert-danger'>
+                    <strong>Erro! </strong>
+                    {$eachError}.
+                </div>
+            ";
+        }
+
+        foreach ($success as $eachSuccess) {
+            echo "
+                <div class='alert alert-success'>
+                    <strong>Pronto! </strong>
+                    {$eachSuccess}.
+                </div>
+            ";
+        }
+
+        ?>
+    </div>
+</section>

@@ -1,0 +1,21 @@
+<section>
+    <div class="col-md-12">
+        <div class="card card-body">
+            <h1>Tem certeza?</h1>
+            <div class="alert alert-danger">
+                Deseja realmente excluir o usuário
+                <strong><?=$data['user']->getName();?></strong>
+            </div>
+
+            <div>
+                <a href="/excluir-usuario?id=<?=$data['user']->getId()?>"
+                    class="btn btn-danger">
+                    Confirmar
+                </a>
+                <a href="/usuarios" class="btn btn-secondary">
+                    Semfirmar
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

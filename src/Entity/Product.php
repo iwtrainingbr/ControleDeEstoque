@@ -11,5 +11,5 @@ use Doctrine\ORM\Mapping\GeneratedValue;
 
 class Product
 {
-
+    //id, nome, descricao, preco, quantidade, criado, atualizado
 }

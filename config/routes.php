@@ -20,9 +20,13 @@ return[
     '/categorias' => mountRoutes(CategoryController::class, 'list'),
     '/nova-categoria' => mountRoutes(CategoryController::class, 'add'),
     '/excluir-categoria' => mountRoutes(CategoryController::class, 'remove'),
+    '/categorias/pdf' => mountRoutes(CategoryController::class, 'pdf'),
 
     '/novo-usuario' => mountRoutes(UserController::class, 'add'),
     '/usuarios' => mountRoutes(UserController::class, 'list'),
+    '/excluir-usuario' => mountRoutes(UserController::class, 'remove'),
+    '/confirmar-excluir-usuario' => mountRoutes(UserController::class, 'confirmRemove'),
+
     '/novo-produto' => mountRoutes(ProductController::class, 'add'),
     '/produtos' => mountRoutes(ProductController::class, 'list'),
 
