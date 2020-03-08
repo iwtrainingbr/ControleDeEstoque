@@ -6,21 +6,29 @@
             <input type="text" class="form-control" name="name" id="name"><br>
 
             <label for="categoria">Categoria</label>
-            <select class="form-control"   >
+            <select class="form-control" name="category">
                 <option> -- Selecione -- </option>
-                <option>Informatica</option>
+                <?php
+                    foreach ($data['categories'] as $category) {
+                        echo "<option value='{$category->getId()}'>
+                            {$category->getName()}
+                        </option>";
+                    }
+                ?>
             </select><br>
+
             <div class="row">
-                <div class="col-md-4"   >
+                <div class="col-md-4">
                     <label for=quantidade>Quantidade</label>
-                    <input type="text" class="form-control" name="quantidade" id="quantidade"><br>
+                    <input type="text" class="form-control" name="quantity" id="quantidade"><br>
                 </div>
-            </div>  
+            </div>
+
             <label for="descricao">Descrição</label>    
-            <textarea class=" form-control" name="descricao" id="descricao"> </textarea>
+            <textarea class=" form-control" name="description" id="descricao"> </textarea>
             <br>
 
-            <button class="btn btn-primary btn-block" name="button"> Enviar </button>
+            <button class="btn btn-primary btn-block"> Enviar </button>
     </div>
 
 </section>

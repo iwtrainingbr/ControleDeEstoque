@@ -1,5 +1,6 @@
 <?php
 
+use App\Controller\Api\CategoryApiController;
 use App\Controller\IndexController;
 use App\Controller\CategoryController;
 use App\Controller\ProductController;
@@ -30,4 +31,9 @@ return[
     '/novo-produto' => mountRoutes(ProductController::class, 'add'),
     '/produtos' => mountRoutes(ProductController::class, 'list'),
 
+    '/sair' => mountRoutes(IndexController::class, 'logout'),
+
+
+    //API
+    '/api/categoria' => mountRoutes(CategoryApiController::class, 'main'),
 ];

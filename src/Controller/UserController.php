@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Adapter\Connection;
 use App\Entity\User;
+use App\Security\UserPermission;
 use Doctrine\ORM\EntityManager;
 
 class UserController extends AbstractController
@@ -21,6 +22,8 @@ class UserController extends AbstractController
 
     public function add():void
     {
+        UserPermission::needUserLogged();
+
         if ($_POST) {
             if (trim($_POST['name']) === '') {
                 $_SESSION['error'] = ['Nome é obrigatório'];
@@ -47,6 +50,8 @@ class UserController extends AbstractController
 
     public function list(): void
     {
+        UserPermission::needUserLogged();
+
         $users = $this->repository->findAll();
 
         $this->render('user/list', [
@@ -56,6 +61,8 @@ class UserController extends AbstractController
 
     public function remove(): void
     {
+        UserPermission::needUserLogged();
+
         $user = $this->repository->find($_GET['id']);
 
         $this->entityManager->remove($user);
@@ -68,6 +75,8 @@ class UserController extends AbstractController
 
     public function confirmRemove(): void
     {
+        UserPermission::needUserLogged();
+
         $user = $this->repository->find($_GET['id']);
 
         $this->render('user/confirm-remove', [

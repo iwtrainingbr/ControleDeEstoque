@@ -15,46 +15,17 @@
                     <th>Ações</th>
                 </thead>
                 <tbody class="text-center">
-                    <tr>
-                        <td>Tablet 10" Samsung</td>
-                        <td>Informatica</td>
-                        <td>8</td>
-                        <td>Produtos de Tecnologia</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Tablet 10" Samsung</td>
-                        <td>Informatica</td>
-                        <td>8</td>
-                        <td>Produtos de Tecnologia</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Tablet 10" Samsung</td>
-                        <td>Informatica</td>
-                        <td>8</td>
-                        <td>Produtos de Tecnologia</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Tablet 10" Samsung</td>
-                        <td>Informatica</td>
-                        <td>8</td>
-                        <td>Produtos de Tecnologia</td>
-                        <td>
-                            <a href="/excluir-categoria" class="btn btn-danger">Excluir</a>
-                            <a href="/editar-categoria" class="btn btn-warning">Editar</a>
-                        </td>
-                    </tr>
+                <?php
+                foreach ($data['products'] as $product) {
+                    echo "<tr>
+                        <td>{$product->getName()}</td>
+                        <td title='{$product->getCategory()->getDescription()}'>{$product->getCategory()->getName()}</td>
+                        <td>{$product->getQuantity()}</td>
+                        <td>{$product->getDescription()}</td>
+                        <td></td>
+                    </tr>";
+                }
+                ?>
                 </tbody>
 
             </table>
